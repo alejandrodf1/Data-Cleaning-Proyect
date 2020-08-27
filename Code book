@@ -1,0 +1,68 @@
+-'README.txt': explain how the code works
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'train/X_train.txt': Training set.
+
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+
+- 'test/y_test.txt': Test labels.
+
+The following files are available for the train and test data. Their descriptions are equivalent. 
+
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+##the activities labels
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING
+
+##Features
+
+TimeDomain_BodyAccelerometer-XYZ
+TimeDomain_GravityAccelerometer-XYZ
+TimeDomain_BodyAccelerometerJerk-XYZ
+TimeDomain_BodyGyroscope-XYZ
+TimeDomain_BodyGyroscopeJerk-XYZ
+TimeDomain_BodyAccelerometerMagnitude
+TimeDomain_GravityAccMagnitude
+TimeDomain_BodyAccelerometerJerkMagnitude
+TimeDomain_BodyGyroscopeMagnitude
+TimeDomain_BodyGyroscopeJerkMagnitude
+FrequencyDomain_BodyAccelerometer-XYZ
+FrequencyDomain_BodyAccelerometerJerk-XYZ
+FrequencyDomain_BodyGyroscope-XYZ
+FrequencyDomain_BodyAccelerometerMagnitude
+FrequencyDomain_BodyAccelerometerJerkMagnitude
+FrequencyDomain_BodyGyroscopeMagnitude
+FrequencyDomain_BodyGyroscopeJerkMagnitude  
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+angle(): Angle between to vectors.
+
