@@ -28,3 +28,23 @@ data_mean_sd<- grep("mean|std", data_features) ##posiciones
 data_sub<- data_mergue[,c(1,2,data_mean_sd + 2)] ##showing data
 
 ##activities name
+data_name_ac<- read.table("./UCI HAR Dataset/activity_labels.txt", header = FALSE)
+data_name_ac<-as.character(data_name_ac[,2])
+data_sub$activity<- data_name_ac[data_sub$activity]
+
+##Etiquetas apropiadas
+name_new<- names(data_sub)
+name_new<- gsub("[(][)]","", name_new)
+name_new<-gsub("^t","TimeDomain_", name_new)
+name_new<- gsub("^f", "FrequencyDomain_", name_new)
+name_new<-gsub("Acc","Accelerometer",name_new)
+name_new<-gsub("Gyro", "Gyroscope", name_new)
+name_new<-gsub("Mag", "Magnitude", name_new)
+name_new<-gsub("-mean-","_Mean_",name_new)
+name_new<-gsub("-std-","_standardDeviation_",name_new)
+name_new<-gsub("-", "_",name_new)
+names(data_sub)<-name_new
+names(data_sub)
+##new tidy data
+data_tidy<- aggregate(data_sub[,3:81], by = list(activity=data_sub$activity, subject=data_sub$subject), FUN = mean)
+write.table(x = data_tidy, file = "data_tidy.txt", row.names = FALSE)
